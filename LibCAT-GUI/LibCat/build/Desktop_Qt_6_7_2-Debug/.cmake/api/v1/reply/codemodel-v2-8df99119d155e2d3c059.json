@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-5f74066f2ab3d0c870f2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LibCat",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LibCat::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LibCat-Debug-d166c6ceaec7980d9aa1.json",
+					"name" : "LibCat",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LibCat_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LibCat_autogen-Debug-32755cdc543d94d1c994.json",
+					"name" : "LibCat_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LibCat_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LibCat_autogen_timestamp_deps-Debug-00a4546c7401fb464417.json",
+					"name" : "LibCat_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/magdyrd/Desktop/libcatSYS/LibCAT-GUI/LibCat/build/Desktop_Qt_6_7_2-Debug",
+		"source" : "/home/magdyrd/Desktop/libcatSYS/LibCAT-GUI/LibCat"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -2,6 +2,7 @@
 #define __INCLUDE__H__
 #include <iostream>
 #include <vector>
+#include <string>
 
 namespace choices{
     enum choice{
@@ -39,11 +40,10 @@ class Book{
     }
 
 
-    void displayInfo(){
-        std::cout << "Title: " << title << std::endl;
-        std::cout << "Author: " << author << std::endl;
-        std::cout << "Year: " << year << std::endl;
-        std::cout << "<------------------------------>" << std::endl;
+    std::string displayInfo()const{
+        std::string full;
+        full +=  "Author: "+ author + "," + "Title: " + title + "," + "Year: "+ std::to_string(year) + "\n";
+        return full;
     }
 
 
@@ -53,42 +53,51 @@ class Book{
 
 class LibraryCat{
     private:    
-    std::vector<Book*> books;
+    std::vector<Book> books;
 
     public:
-    void addBook(){
-        std::string tit, name;
-        int yr;
-        std::cout << "Enter Book Title: " << std::endl;
-        std::cin >> tit;
-        std::cout << "Enter Author Name: " << std::endl;
-        std::cin >> name;
-        std::cout << "Enter Year of the Book: " << std::endl;
-        std::cin >> yr;
-        books.push_back(new Book(tit, name, yr));
-        
+
+    std::size_t getnumberofbooks(){
+        return books.size();
+    }
+    void addBook(const Book& book){
+
+        // std::cout << "Enter Book Title: " << std::endl;
+        // std::cin >> tit;
+        // std::cout << "Enter Author Name: " << std::endl;
+        // std::cin >> name;
+        // std::cout << "Enter Year of the Book: " << std::endl;
+        // std::cin >> yr;
+        books.push_back(book);
     }
 
-    void searchbyauthor(){
-        std::string name;
-        std::cout << "Enter Author Name: " << std::endl;
-        std::cin >> name;
-        for (const auto& book : books){
-            if(book->getAuthor() == name)
+    std::string searchbyauthor(std::string name) const{
+        std::string matchingbook;
+        for (const Book& book : books){
+            if(book.getAuthor() == name)
             {
-                book->displayInfo();
+                matchingbook += book.displayInfo() + "\n";
                
             }
+
         }
+        if (matchingbook.empty()) {
+            return "No books found for author: " + name;
+        }
+        return matchingbook;
 
     }
 
-    void displayallbooks() const{
-        std::cout << "Displaying all available books.... " << std::endl;
-        std::cout << "<------------------------------>" << std::endl;
-        for (const auto& book : books) {
-            book->displayInfo();
+    std::string displayallbooks() const{
+        std::string full;
+        for (const Book& book : books) {
+            std::string auth = book.getAuthor();
+            std::string title = book.getTitle();
+            std::string yr = std::to_string(book.getYear());
+            full +=  "Author: "+ auth + "," + "Title: " + title + "," + "Year: "+ yr + "\n";
+
         }
+        return full;
     }
 
 
